@@ -1,0 +1,52 @@
+---
+import ArrowRight from "./icons/ArrowRight.astro";
+---
+
+<section class="p-4 md:py-8">
+  <div class="container mx-auto max-w-5xl">
+    <div
+      class="flex flex-col md:flex-row md:items-center md:justify-between md:gap-8"
+    >
+      <div class="md:max-w-xl">
+        <h2
+          class="text-3xl font-bold mb-4 md:mb-8 tracking-tighter sm:text-5xl xl:text-6xl/none"
+        >
+          Frontend Engineer
+        </h2>
+        <p class="mb-8 text-slate-600 px-2 md:px-0 md:max-w-[400px] md:text-xl">
+          I enjoy building websites and web applications that are fast,
+          accessible, and beautiful.
+        </p>
+        <div
+          class="flex flex-col gap-4 mb-4 mx-auto justify-center items-center"
+        >
+          <a
+            href="#projects"
+            class="inline-flex w-full items-center gap-2 max-w-[326px] justify-center bg-slate-900 text-white rounded-md px-4 py-2 hover:bg-slate-800 transition-colors md:max-w-[420px] md:px-6 md:py-3"
+          >
+            <span>View my work</span>
+            <ArrowRight />
+          </a>
+          <a
+            href="#contact"
+            class="inline-flex w-full items-center gap-2 max-w-[326px] justify-center border border-slate-300 rounded-md px-4 py-2 hover:bg-slate-50 transition-colors md:max-w-[420px] md:px-6 md:py-3"
+            >Contact me</a
+          >
+        </div>
+      </div>
+      <div class="mt-8 md:mt-0 shrink-0">
+        <div
+          class="w-[280px] h-[280px] md:w-[420px] md:h-[420px] mx-auto overflow-hidden rounded-2xl"
+        >
+          <img
+            src="https://avatars.githubusercontent.com/u/97746279?v=4"
+            alt="Juan Manuel Grajales"
+            width="420"
+            height="420"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

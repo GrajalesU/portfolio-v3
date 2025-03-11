@@ -1,0 +1,35 @@
+---
+const yearThatIStartedToWork = 2023;
+const currentYear = new Date().getFullYear();
+const yearsOfExperience = currentYear - yearThatIStartedToWork;
+---
+
+<section class="p-4 bg-slate-200 md:py-8">
+  <div class="container mx-auto max-w-[800px]">
+    <h2
+      class="text-3xl font-bold mb-4 md:mb-8 tracking-tighter sm:text-5xl xl:text-6xl/none md:text-center"
+    >
+      About me
+    </h2>
+    <div class="text-pretty text-slate-600 px-2 flex flex-col gap-4 md:text-xl">
+      <p>
+        I'm a passionate frontend developer with a strong focus on creating
+        intuitive and performant web applications. With expertise in modern
+        JavaScript frameworks and a keen eye for design, I strive to build
+        digital experiences that are both beautiful and functional.
+
+        <p>
+          My journey in web development began {yearsOfExperience} years ago, and
+          I've since worked with various technologies and teams to deliver high-quality
+          products. I'm constantly learning and adapting to new technologies to stay
+          at the forefront of frontend development.
+        </p>
+        <p>
+          When I'm not coding, you can find me exploring new design trends,
+          sharing my knowledge as a speaker and tutor and attending community
+          events such as talks and workshops.
+        </p>
+      </p>
+    </div>
+  </div>
+</section>

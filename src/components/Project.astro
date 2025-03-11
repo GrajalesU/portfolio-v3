@@ -1,0 +1,77 @@
+---
+import GitHub from "./icons/GitHub.astro";
+
+interface Props {
+  image: {
+    src: string;
+    alt: string;
+  };
+  title: string;
+  description: string;
+  technologies: string[];
+  gitHub?: string;
+  url?: string;
+}
+
+const { image, title, description, technologies, gitHub, url } = Astro.props;
+---
+
+<div
+  class="group flex flex-col h-full gap-4 p-4 md:p-8 md:gap-8 rounded-md border border-slate-300 hover:shadow-md transition-all bg-white"
+>
+  <div>
+    <div class="aspect-video rounded-md overflow-hidden bg-slate-50">
+      <img
+        class="w-full h-full object-cover project-img transition-transform duration-300"
+        src={image.src}
+        alt={image.alt}
+      />
+    </div>
+  </div>
+  <div class="flex flex-col flex-1 gap-4">
+    <h3 class="text-xl font-bold group-hover:text-slate-900 transition-colors">
+      {title}
+    </h3>
+    <p class="text-slate-600 text-sm flex-1">{description}</p>
+    <div>
+      <ul class="inline-flex flex-wrap gap-2">
+        {
+          technologies.map((tech) => (
+            <li class="border border-slate-300 font-bold text-xs rounded-md px-2.5 py-0.5 hover:bg-slate-50 transition-colors">
+              {tech}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="flex text-sm font-medium justify-between">
+      {
+        url && (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group/link inline-flex items-center gap-2 rounded-md border border-slate-300 px-3 py-0.5 md:px-4 md:py-1 hover:bg-slate-50 transition-colors"
+          >
+            <span class="group-hover/link:text-slate-900 transition-colors">
+              Live demo
+            </span>
+          </a>
+        )
+      }
+      <a
+        href={gitHub}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group/link inline-flex items-center gap-2 rounded-md border border-slate-300 px-3 py-0.5 md:px-4 md:py-1 hover:bg-slate-50 transition-colors"
+      >
+        <span class="group-hover/link:scale-110 transition-transform">
+          <GitHub />
+        </span>
+        <span class="group-hover/link:text-slate-900 transition-colors"
+          >GitHub</span
+        >
+      </a>
+    </div>
+  </div>
+</div>

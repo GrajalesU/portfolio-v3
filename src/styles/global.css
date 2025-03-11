@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 16px;
+}
+
+section[id] {
+  scroll-margin-top: 16px;
+}
+
+@theme {
+  --font-display: "Inter", sans-serif;
+}

@@ -1,0 +1,85 @@
+---
+import Project from "./Project.astro";
+---
+
+<section class="p-4 md:py-8" id="projects">
+  <div class="container mx-auto max-w-6xl p-4">
+    <h2
+      class="text-3xl font-bold text-center mb-4 md:mb-8 tracking-tighter sm:text-5xl xl:text-6xl"
+    >
+      Projects
+    </h2>
+    <p class="text-slate-600 text-center max-w-2xl mx-auto mb-8 md:text-xl">
+      Here are some of my projects. Each one represents a unique challenge and
+      solution.
+    </p>
+  </div>
+  <ul
+    class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 mx-auto px-4 place-items-stretch"
+  >
+    <li>
+      <Project
+        image={{
+          src: "https://res.cloudinary.com/dkgwymlp8/image/upload/v1675314304/proyectos/plantpedia_vreufv.png",
+          alt: "Plantpedia home page",
+        }}
+        title="Plantpedia"
+        description="A plant encyclopedia built with Next.js and Contentful, using a Jamstack architecture and featuring internationalization support."
+        technologies={[
+          "Next.js",
+          "React",
+          "GraphQL",
+          "Tailwind CSS",
+          "Contentful",
+        ]}
+        gitHub="https://github.com/grajalesu/platzi-plantpedia"
+        url="https://platzi-plantpedia-grajalesu.vercel.app/"
+      />
+    </li>
+    <li>
+      <Project
+        image={{
+          src: "https://grajalesu.github.io/portfolio/konectapp_1.jpg",
+          alt: "Website generator admin pannel",
+        }}
+        title="Website generator"
+        description="A web application that uses cloud services to generate generic web pages, allowing clients to display their products and administrators to manage the clients in the system."
+        technologies={["React", "AWS", "Stripe", "Tailwind CSS"]}
+        gitHub="https://github.com/pikonecta/pikonecta"
+      />
+    </li>
+    <li>
+      <Project
+        image={{
+          src: "https://res.cloudinary.com/dkgwymlp8/image/upload/v1671338494/proyectos/ow_gpvauv.png",
+          alt: "Old Wave E-commerce",
+        }}
+        title="Old Wave E-commerce"
+        description="An e-commerce platform built with React and Node.js, adding CI/CD to ensure efficient and automated deployments."
+        technologies={["React", "Node.js", "Tailwind CSS"]}
+        gitHub="https://github.com/GrajalesU/oldwave"
+      />
+    </li>
+    <li class="project-img-contain">
+      <Project
+        image={{
+          src: "https://res.cloudinary.com/dkgwymlp8/image/upload/v1675314303/proyectos/petgram_apgoah.png",
+          alt: "Petgram carousel",
+        }}
+        title="Petgram"
+        description="An Instagram clone connected with GraphQL, where you can create your account and interact with the posts of other pet lovers."
+        technologies={["React", "Tailwind CSS", "GraphQL", "Node.js"]}
+        gitHub="https://github.com/GrajalesU/curso-react-avanzado"
+        url="https://petgram-tau-rosy.vercel.app/"
+      />
+    </li>
+  </ul>
+</section>
+
+<style>
+  .project-img-contain {
+    .project-img {
+      object-fit: contain;
+    }
+  }
+</style>
