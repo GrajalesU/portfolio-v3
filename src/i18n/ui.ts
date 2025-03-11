@@ -73,6 +73,9 @@ export const uiTexts = {
         },
         success: "Mensaje enviado con éxito",
         error: "Error al enviar el mensaje"
+    },
+    seo: {
+        description: "Desarrollador frontend con experiencia en la creación de sitios web responsivos y optimizados para SEO. Especializado en React. Ubicado en Colombia, disponible para proyectos freelance y de tiempo completo. ¡Contáctame para trabajar juntos en tu próximo proyecto web!"
     }
  },
  en: {
@@ -138,6 +141,9 @@ export const uiTexts = {
         },
         success: "Message sent successfully",
         error: "Error sending message"
+    },
+    seo: {
+        description: "Frontend engineer with experience in creating responsive and optimized websites for SEO. Specialized in React. Located in Colombia, available for freelance and full-time projects. Contact me to work together on your next web project!"
     }
  } 
 } as const;
