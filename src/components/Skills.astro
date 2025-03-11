@@ -1,12 +1,18 @@
+---
+import { useTranslations, getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(new URL(Astro.url));
+const t = useTranslations(lang);
+---
+
 <section class="p-4 bg-slate-200 md:py-8" id="skills">
   <div class="container mx-auto max-w-6xl">
     <h2
       class="text-3xl font-bold mb-4 md:mb-8 tracking-tighter sm:text-5xl xl:text-6xl/none"
     >
-      Skills
+      {t("skills.title")}
     </h2>
     <p class="mb-8 text-slate-600 px-2 md:px-0 md:text-xl max-w-2xl">
-      Here are the technologies and tools I work with.
+      {t("skills.description")}
     </p>
     <ul
       class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 justify-items-center *:bg-white *:rounded-md *:px-2.5 *:py-0.5 *:border *:border-slate-300 *:max-w-[180px] *:w-full *:text-center max-w-[calc(180px*4+16px*4)] mx-auto *:hover:shadow-md *:transition-shadow *:md:px-4 *:md:py-1 *:items-center *:justify-center *:flex"

@@ -1,5 +1,8 @@
 ---
 import ArrowRight from "./icons/ArrowRight.astro";
+import { useTranslations, getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(new URL(Astro.url));
+const t = useTranslations(lang);
 ---
 
 <section class="p-4 md:py-8">
@@ -11,11 +14,10 @@ import ArrowRight from "./icons/ArrowRight.astro";
         <h2
           class="text-3xl font-bold mb-4 md:mb-8 tracking-tighter sm:text-5xl xl:text-6xl/none"
         >
-          Frontend Engineer
+          {t("hero.title")}
         </h2>
         <p class="mb-8 text-slate-600 px-2 md:px-0 md:max-w-[400px] md:text-xl">
-          I enjoy building websites and web applications that are fast,
-          accessible, and beautiful.
+          {t("hero.description")}
         </p>
         <div
           class="flex flex-col gap-4 mb-4 mx-auto justify-center items-center"
@@ -24,14 +26,15 @@ import ArrowRight from "./icons/ArrowRight.astro";
             href="#projects"
             class="inline-flex w-full items-center gap-2 max-w-[326px] justify-center bg-slate-900 text-white rounded-md px-4 py-2 hover:bg-slate-800 transition-colors md:max-w-[420px] md:px-6 md:py-3"
           >
-            <span>View my work</span>
+            <span>{t("hero.projects-btn")}</span>
             <ArrowRight />
           </a>
           <a
             href="#contact"
             class="inline-flex w-full items-center gap-2 max-w-[326px] justify-center border border-slate-300 rounded-md px-4 py-2 hover:bg-slate-50 transition-colors md:max-w-[420px] md:px-6 md:py-3"
-            >Contact me</a
           >
+            {t("hero.contact-btn")}
+          </a>
         </div>
       </div>
       <div class="mt-8 md:mt-0 shrink-0">
@@ -40,7 +43,7 @@ import ArrowRight from "./icons/ArrowRight.astro";
         >
           <img
             src="https://avatars.githubusercontent.com/u/97746279?v=4"
-            alt="Juan Manuel Grajales"
+            alt={t("hero.img-alt")}
             width="420"
             height="420"
             class="w-full h-full object-cover"

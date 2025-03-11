@@ -14,6 +14,10 @@ interface Props {
 }
 
 const { image, title, description, technologies, gitHub, url } = Astro.props;
+
+import { useTranslations, getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(new URL(Astro.url));
+const t = useTranslations(lang);
 ---
 
 <div
@@ -54,7 +58,7 @@ const { image, title, description, technologies, gitHub, url } = Astro.props;
             class="group/link inline-flex items-center gap-2 rounded-md border border-slate-300 px-3 py-0.5 md:px-4 md:py-1 hover:bg-slate-50 transition-colors"
           >
             <span class="group-hover/link:text-slate-900 transition-colors">
-              Live demo
+              {t("projects.demo")}
             </span>
           </a>
         )

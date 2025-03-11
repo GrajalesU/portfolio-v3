@@ -1,0 +1,13 @@
+---
+import { getLangFromUrl, setLangInUrl } from "../i18n/utils";
+const lang = getLangFromUrl(new URL(Astro.url));
+---
+
+<a
+  href={setLangInUrl(new URL(Astro.url), lang === "es" ? "en" : "es")}
+  class="group inline-flex items-center font-bold px-2 py-1"
+>
+  <span class="group-hover:scale-110 transition-transform"
+    >{lang === "es" ? "EN" : "ES"}</span
+  >
+</a>

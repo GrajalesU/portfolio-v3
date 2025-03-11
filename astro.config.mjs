@@ -16,4 +16,12 @@ export default defineConfig({
   },
 
   integrations: [icon()],
+
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en"],
+    routing: {
+      prefixDefaultLocale: false
+  }
+  }
 });

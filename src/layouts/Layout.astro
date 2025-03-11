@@ -2,10 +2,15 @@
 import FileDocument from "../components/icons/FileDocument.astro";
 import GitHub from "../components/icons/GitHub.astro";
 import LinkedIn from "../components/icons/LinkedIn.astro";
+import LangSwitch from "../components/LangSwitch.astro";
+
+import { useTranslations, getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(new URL(Astro.url));
+const t = useTranslations(lang);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -26,7 +31,10 @@ import LinkedIn from "../components/icons/LinkedIn.astro";
           <strong class="pr-2 font-bold text-slate-900">Portfolio</strong>
           <span class="md:text-lg">Juan Manuel Grajales</span>
         </h1>
-        <ul class="hidden md:flex items-center gap-4 px-4 py-2 md:px-8 md:py-4">
+        <LangSwitch />
+        <ul
+          class="hidden md:flex items-center gap-4 px-4 py-2 md:px-8 md:py-4 md:min-w-[540px]"
+        >
           <li>
             <a
               href="#about"
@@ -34,7 +42,7 @@ import LinkedIn from "../components/icons/LinkedIn.astro";
             >
               <span
                 class="group-hover:text-slate-900 transition-colors md:text-lg"
-                >About</span
+                >{t("about.title")}</span
               >
             </a>
           </li>
@@ -45,7 +53,7 @@ import LinkedIn from "../components/icons/LinkedIn.astro";
             >
               <span
                 class="group-hover:text-slate-900 transition-colors md:text-lg"
-                >Projects</span
+                >{t("projects.title")}</span
               >
             </a>
           </li>
@@ -56,7 +64,7 @@ import LinkedIn from "../components/icons/LinkedIn.astro";
             >
               <span
                 class="group-hover:text-slate-900 transition-colors md:text-lg"
-                >Skills</span
+                >{t("skills.title")}</span
               >
             </a>
           </li>
@@ -64,7 +72,7 @@ import LinkedIn from "../components/icons/LinkedIn.astro";
             <a
               href="#contact"
               class="rounded-md bg-slate-900 text-white px-4 py-2 md:px-6 md:py-3 hover:bg-slate-800 transition-colors md:text-lg"
-              >Contact</a
+              >{t("contact.title")}</a
             >
           </li>
         </ul>

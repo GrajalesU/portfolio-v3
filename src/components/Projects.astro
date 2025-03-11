@@ -1,17 +1,20 @@
 ---
 import Project from "./Project.astro";
+
+import { useTranslations, getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(new URL(Astro.url));
+const t = useTranslations(lang);
 ---
 
 <section class="p-4 md:py-8" id="projects">
   <div class="container mx-auto max-w-6xl p-4">
     <h2
-      class="text-3xl font-bold text-center mb-4 md:mb-8 tracking-tighter sm:text-5xl xl:text-6xl"
+      class="text-3xl font-bold mb-4 md:mb-8 tracking-tighter sm:text-5xl xl:text-6xl"
     >
-      Projects
+      {t("projects.title")}
     </h2>
-    <p class="text-slate-600 text-center max-w-2xl mx-auto mb-8 md:text-xl">
-      Here are some of my projects. Each one represents a unique challenge and
-      solution.
+    <p class="text-slate-600 max-w-2xl mb-8 md:text-xl">
+      {t("projects.description")}
     </p>
   </div>
   <ul
@@ -21,10 +24,10 @@ import Project from "./Project.astro";
       <Project
         image={{
           src: "https://res.cloudinary.com/dkgwymlp8/image/upload/v1675314304/proyectos/plantpedia_vreufv.png",
-          alt: "Plantpedia home page",
+          alt: t("projects.projectList.0.alt"),
         }}
-        title="Plantpedia"
-        description="A plant encyclopedia built with Next.js and Contentful, using a Jamstack architecture and featuring internationalization support."
+        title={t("projects.projectList.0.title")}
+        description={t("projects.projectList.0.description")}
         technologies={[
           "Next.js",
           "React",
@@ -40,10 +43,10 @@ import Project from "./Project.astro";
       <Project
         image={{
           src: "https://grajalesu.github.io/portfolio/konectapp_1.jpg",
-          alt: "Website generator admin pannel",
+          alt: t("projects.projectList.1.alt"),
         }}
-        title="Website generator"
-        description="A web application that uses cloud services to generate generic web pages, allowing clients to display their products and administrators to manage the clients in the system."
+        title={t("projects.projectList.1.title")}
+        description={t("projects.projectList.1.description")}
         technologies={["React", "AWS", "Stripe", "Tailwind CSS"]}
         gitHub="https://github.com/pikonecta/pikonecta"
       />
@@ -52,10 +55,10 @@ import Project from "./Project.astro";
       <Project
         image={{
           src: "https://res.cloudinary.com/dkgwymlp8/image/upload/v1671338494/proyectos/ow_gpvauv.png",
-          alt: "Old Wave E-commerce",
+          alt: t("projects.projectList.2.alt"),
         }}
-        title="Old Wave E-commerce"
-        description="An e-commerce platform built with React and Node.js, adding CI/CD to ensure efficient and automated deployments."
+        title={t("projects.projectList.2.title")}
+        description={t("projects.projectList.2.description")}
         technologies={["React", "Node.js", "Tailwind CSS"]}
         gitHub="https://github.com/GrajalesU/oldwave"
       />
@@ -64,10 +67,10 @@ import Project from "./Project.astro";
       <Project
         image={{
           src: "https://res.cloudinary.com/dkgwymlp8/image/upload/v1675314303/proyectos/petgram_apgoah.png",
-          alt: "Petgram carousel",
+          alt: t("projects.projectList.3.alt"),
         }}
-        title="Petgram"
-        description="An Instagram clone connected with GraphQL, where you can create your account and interact with the posts of other pet lovers."
+        title={t("projects.projectList.3.title")}
+        description={t("projects.projectList.3.description")}
         technologies={["React", "Tailwind CSS", "GraphQL", "Node.js"]}
         gitHub="https://github.com/GrajalesU/curso-react-avanzado"
         url="https://petgram-tau-rosy.vercel.app/"
