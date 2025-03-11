@@ -70,7 +70,9 @@ export const uiTexts = {
                 placeholder: "Escribe tu mensaje"
             },
             submit: "Enviar mensaje"
-        }
+        },
+        success: "Mensaje enviado con éxito",
+        error: "Error al enviar el mensaje"
     }
  },
  en: {
@@ -133,7 +135,9 @@ export const uiTexts = {
                 placeholder: "Your message"
             },
             submit: "Send message"
-        }
+        },
+        success: "Message sent successfully",
+        error: "Error sending message"
     }
  } 
 } as const;

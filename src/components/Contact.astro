@@ -99,7 +99,7 @@ const t = useTranslations(lang);
           </div>
           <button
             type="submit"
-            class="w-full bg-slate-900 text-white rounded-md px-4 py-2 md:px-6 md:py-3 hover:bg-slate-800 transition-colors"
+            class="w-full bg-slate-900 text-white rounded-md px-4 py-2 md:px-6 md:py-3 hover:bg-slate-800 transition-colors disabled:opacity-50"
           >
             {t("contact.form.submit")}
           </button>
@@ -108,3 +108,64 @@ const t = useTranslations(lang);
     </div>
   </div>
 </section>
+
+<script>
+  import Toastify from "toastify-js";
+  import emailjs from "@emailjs/browser";
+  import "toastify-js/src/toastify.css";
+  import { useTranslations, getLangFromUrl } from "../i18n/utils";
+  const t = useTranslations(getLangFromUrl(new URL(window.location.href)));
+  const button = document.querySelector("button");
+  const form = document.querySelector("form") as HTMLFormElement;
+
+  const showToast = (message: string, isError = false) => {
+    Toastify({
+      text: message,
+      duration: 3000,
+      close: true,
+      gravity: "bottom",
+      position: "left",
+      stopOnFocus: true,
+      style: {
+        background: "white",
+        color: "#0f172a",
+        border: `1px solid ${isError ? "#dc2626" : "#16a34a"}`,
+        borderRadius: "0.5rem",
+        padding: "0.5rem 1rem",
+        boxShadow: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        fontSize: "0.875rem",
+        fontWeight: "500",
+      },
+    }).showToast();
+  };
+
+  const handleSubmit = (e: Event) => {
+    e.preventDefault();
+    if (!form || !button) return;
+
+    const formData = new FormData(form);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
+
+    if (!name || !email || !message) {
+      showToast(t("contact.error"), true);
+      return;
+    }
+
+    button.disabled = true;
+
+    emailjs
+      .sendForm("service_yrqlvew", "template_z9cggzt", form)
+      .then(() => {
+        showToast(t("contact.success"));
+        form.reset();
+      })
+      .catch(() => {
+        showToast(t("contact.error"), true);
+        button.disabled = false;
+      });
+  };
+
+  form?.addEventListener("submit", handleSubmit);
+</script>

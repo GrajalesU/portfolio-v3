@@ -10,6 +10,16 @@ section[id] {
   scroll-margin-top: 16px;
 }
 
+@media (width > 48rem) {
+  html {
+    scroll-padding-top: 32px;
+  }
+
+  section[id] {
+    scroll-margin-top: 32px;
+  }
+}
+
 @theme {
   --font-display: "Inter", sans-serif;
 }
