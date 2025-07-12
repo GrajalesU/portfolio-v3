@@ -1,12 +1,17 @@
 ---
 import Project from "./Project.astro";
-
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import { useTranslations, getLangFromUrl } from "../i18n/utils";
 const lang = getLangFromUrl(new URL(Astro.url));
 const t = useTranslations(lang);
 ---
 
-<section class="p-4 md:py-8 md:pb-16 bg-slate-200" id="projects">
+<section
+  class="p-4 md:py-8 md:pb-16 bg-slate-200 min-h-svh content-center"
+  id="projects"
+>
   <div class="container mx-auto max-w-6xl p-4">
     <h2
       class="text-3xl font-bold mb-4 md:mb-8 tracking-tighter sm:text-5xl xl:text-6xl"
@@ -17,72 +22,102 @@ const t = useTranslations(lang);
       {t("projects.description")}
     </p>
   </div>
-  <ul
-    class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 mx-auto px-4 place-items-stretch"
-  >
-    <li>
-      <Project
-        image={{
-          src: "https://res.cloudinary.com/dkgwymlp8/image/upload/v1675314304/proyectos/plantpedia_vreufv.png",
-          alt: t("projects.projectList.0.alt"),
-        }}
-        title={t("projects.projectList.0.title")}
-        description={t("projects.projectList.0.description")}
-        technologies={[
-          "Next.js",
-          "React",
-          "GraphQL",
-          "Tailwind CSS",
-          "Contentful",
-        ]}
-        gitHub="https://github.com/grajalesu/platzi-plantpedia"
-        url="https://platzi-plantpedia-grajalesu.vercel.app/"
-      />
-    </li>
-    <li>
-      <Project
-        image={{
-          src: "https://grajalesu.github.io/portfolio/konectapp_1.jpg",
-          alt: t("projects.projectList.1.alt"),
-        }}
-        title={t("projects.projectList.1.title")}
-        description={t("projects.projectList.1.description")}
-        technologies={["React", "AWS", "Stripe", "Tailwind CSS"]}
-        gitHub="https://github.com/pikonecta/pikonecta"
-      />
-    </li>
-    <li>
-      <Project
-        image={{
-          src: "https://res.cloudinary.com/dkgwymlp8/image/upload/v1671338494/proyectos/ow_gpvauv.png",
-          alt: t("projects.projectList.2.alt"),
-        }}
-        title={t("projects.projectList.2.title")}
-        description={t("projects.projectList.2.description")}
-        technologies={["React", "Node.js", "Tailwind CSS"]}
-        gitHub="https://github.com/GrajalesU/oldwave"
-      />
-    </li>
-    <li class="project-img-contain">
-      <Project
-        image={{
-          src: "https://res.cloudinary.com/dkgwymlp8/image/upload/v1675314303/proyectos/petgram_apgoah.png",
-          alt: t("projects.projectList.3.alt"),
-        }}
-        title={t("projects.projectList.3.title")}
-        description={t("projects.projectList.3.description")}
-        technologies={["React", "Tailwind CSS", "GraphQL", "Node.js"]}
-        gitHub="https://github.com/GrajalesU/curso-react-avanzado"
-        url="https://petgram-tau-rosy.vercel.app/"
-      />
-    </li>
-  </ul>
+  <div class="swiper">
+    <div class="swiper-wrapper pb-8">
+      <div class="swiper-slide">
+        <Project
+          image={{
+            src: "https://res.cloudinary.com/dkgwymlp8/image/upload/v1675314304/proyectos/plantpedia_vreufv.png",
+            alt: t("projects.projectList.0.alt"),
+          }}
+          title={t("projects.projectList.0.title")}
+          description={t("projects.projectList.0.description")}
+          technologies={[
+            "Next.js",
+            "React",
+            "GraphQL",
+            "Tailwind CSS",
+            "Contentful",
+          ]}
+          gitHub="https://github.com/grajalesu/platzi-plantpedia"
+          url="https://platzi-plantpedia-grajalesu.vercel.app/"
+        />
+      </div>
+      <div class="swiper-slide">
+        <Project
+          image={{
+            src: "https://grajalesu.github.io/portfolio/konectapp_1.jpg",
+            alt: t("projects.projectList.1.alt"),
+          }}
+          title={t("projects.projectList.1.title")}
+          description={t("projects.projectList.1.description")}
+          technologies={["React", "AWS", "Stripe", "Tailwind CSS"]}
+          gitHub="https://github.com/pikonecta/pikonecta"
+        />
+      </div>
+      <div class="swiper-slide">
+        <Project
+          image={{
+            src: "https://res.cloudinary.com/dkgwymlp8/image/upload/v1671338494/proyectos/ow_gpvauv.png",
+            alt: t("projects.projectList.2.alt"),
+          }}
+          title={t("projects.projectList.2.title")}
+          description={t("projects.projectList.2.description")}
+          technologies={["React", "Node.js", "Tailwind CSS"]}
+          gitHub="https://github.com/GrajalesU/oldwave"
+        />
+      </div>
+      <div class="swiper-slide">
+        <Project
+          image={{
+            src: "https://res.cloudinary.com/dkgwymlp8/image/upload/v1675314303/proyectos/petgram_apgoah.png",
+            alt: t("projects.projectList.3.alt"),
+          }}
+          title={t("projects.projectList.3.title")}
+          description={t("projects.projectList.3.description")}
+          technologies={["React", "Tailwind CSS", "GraphQL", "Node.js"]}
+          gitHub="https://github.com/GrajalesU/curso-react-avanzado"
+          url="https://petgram-tau-rosy.vercel.app/"
+        />
+      </div>
+    </div>
+    <div class="swiper-pagination md:hidden"></div>
+    <div class="swiper-button-next hidden! md:block!" id="swiper-button-next">
+    </div>
+    <div class="swiper-button-prev hidden! md:block!"></div>
+  </div>
 </section>
 
 <style>
-  .project-img-contain {
-    .project-img {
-      object-fit: contain;
-    }
+  .swiper-slide {
+    width: auto;
   }
 </style>
+<script>
+  import { Swiper } from "swiper";
+  import { Pagination, Navigation } from "swiper/modules";
+
+  new Swiper(".swiper", {
+    modules: [Pagination, Navigation],
+    spaceBetween: 32,
+    slidesPerView: "auto",
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+  const swiperWrapperHeight = (
+    document.querySelector(".swiper-wrapper") as HTMLElement
+  )?.offsetHeight;
+
+  (
+    document.querySelectorAll(".swiper-slide") as NodeListOf<HTMLElement>
+  ).forEach((slide) => {
+    slide.style.height = `${swiperWrapperHeight}px`;
+  });
+</script>
