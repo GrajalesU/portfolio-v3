@@ -84,6 +84,7 @@ const t = useTranslations(lang);
     </main>
     <div
       class="fixed md:right-0 md:top-1/2 md:-translate-y-1/2 md:border-l md:border-t md:border-b md:rounded-l-lg md:bg-white/95 md:backdrop-blur supports-[backdrop-filter]:md:bg-white/60 bottom-0 flex md:flex-col px-4 py-2 justify-between z-50 w-full md:w-auto border-t border-slate-300 bg-white gap-2 md:gap-4 md:justify-normal md:h-fit"
+      id="fixed-contact-info"
     >
       <a
         href="/Juan_Manuel_Grajales__Hoja_de_vida.pdf"
@@ -122,10 +123,40 @@ const t = useTranslations(lang);
   </body>
 </html>
 
+<style>
+  #fixed-contact-info {
+    transition: opacity 300ms ease-in-out;
+  }
+</style>
+
 <script>
   import emailjs from "@emailjs/browser";
-
   emailjs.init({
     publicKey: "user_nLXDuX67AXZpzs2nKdVKZ",
   });
+</script>
+
+<script>
+  function checkOverlap() {
+    const fixedContactInfo = document.getElementById("fixed-contact-info");
+    const swiperButtonNext = document.getElementById("swiper-button-next");
+
+    if (!fixedContactInfo || !swiperButtonNext) return;
+
+    const contactRect = fixedContactInfo.getBoundingClientRect();
+    const nextButtonRect = swiperButtonNext.getBoundingClientRect();
+
+    const isOverlapping =
+      contactRect.right >= nextButtonRect.left &&
+      contactRect.left <= nextButtonRect.right &&
+      contactRect.bottom >= nextButtonRect.top &&
+      contactRect.top <= nextButtonRect.bottom;
+
+    fixedContactInfo.style.opacity = isOverlapping ? "0" : "1";
+    fixedContactInfo.style.zIndex = isOverlapping ? "-1" : "50";
+  }
+
+  requestAnimationFrame(checkOverlap);
+  window.addEventListener("resize", checkOverlap);
+  window.addEventListener("scroll", checkOverlap);
 </script>
