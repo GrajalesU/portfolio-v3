@@ -5,8 +5,8 @@ const lang = getLangFromUrl(new URL(Astro.url));
 const t = useTranslations(lang);
 ---
 
-<section class="p-4 md:py-8 md:pb-16 min-h-svh content-center">
-  <div class="container mx-auto max-w-5xl">
+<section class="w-full p-4 md:py-8 md:pb-16 min-h-svh content-center relative">
+  <div class="container mx-auto max-w-5xl z-20 relative">
     <div
       class="flex flex-col md:flex-row md:items-center md:justify-between md:gap-8"
     >
@@ -16,7 +16,7 @@ const t = useTranslations(lang);
         >
           {t("hero.title")}
         </h2>
-        <p class="mb-8 text-slate-600 px-2 md:px-0 md:max-w-[400px] md:text-xl">
+        <p class="mb-8 text-stone-600 px-2 md:px-0 md:max-w-[400px] md:text-xl">
           {t("hero.description")}
         </p>
         <div
@@ -24,14 +24,14 @@ const t = useTranslations(lang);
         >
           <a
             href="#projects"
-            class="inline-flex w-full items-center gap-2 max-w-[326px] justify-center bg-slate-900 text-white rounded-md px-4 py-2 hover:bg-slate-800 transition-colors md:max-w-[420px] md:px-6 md:py-3"
+            class="inline-flex w-full items-center gap-2 max-w-[326px] justify-center bg-stone-500 text-white rounded-md px-4 py-2 hover:bg-stone-50 hover:text-stone-500 font-bold transition-colors duration-200 md:max-w-[420px] md:px-6 md:py-3"
           >
             <span>{t("hero.projects-btn")}</span>
             <ArrowRight />
           </a>
           <a
             href="#contact"
-            class="inline-flex w-full items-center gap-2 max-w-[326px] justify-center border border-slate-300 rounded-md px-4 py-2 hover:bg-slate-50 transition-colors md:max-w-[420px] md:px-6 md:py-3"
+            class="inline-flex w-full items-center gap-2 max-w-[326px] justify-center border border-stone-300 rounded-md px-4 py-2 hover:border-white bg-white hover:bg-stone-50 font-bold text-stone-500 transition-colors duration-200 md:max-w-[420px] md:px-6 md:py-3"
           >
             {t("hero.contact-btn")}
           </a>
@@ -51,5 +51,20 @@ const t = useTranslations(lang);
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="absolute inset-0 z-0"
+    style={{
+      backgroundImage: `
+        linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+        linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)
+      `,
+      backgroundSize: "60px 60px",
+      WebkitMaskImage:
+        "radial-gradient(ellipse 70% 60% at 50% 100%, #000 60%, transparent 100%)",
+      maskImage:
+        "radial-gradient(ellipse 70% 60% at 50% 100%, #000 60%, transparent 100%)",
+    }}
+  >
   </div>
 </section>

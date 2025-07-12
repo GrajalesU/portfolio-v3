@@ -23,3 +23,17 @@ section[id] {
 @theme {
   --font-display: "Inter", sans-serif;
 }
+
+@theme {
+  --color-stone-50: oklch(95.62% 0.012 276.17);
+  --color-stone-100: oklch(92.33% 0.021 274.06);
+  --color-stone-200: oklch(84.58% 0.044 274.01);
+  --color-stone-300: oklch(76.01% 0.071 271.99);
+  --color-stone-400: oklch(68.4% 0.094 269.27);
+  --color-stone-500: oklch(60.72% 0.118 266.72);
+  --color-stone-600: oklch(53.01% 0.106 266.16);
+  --color-stone-700: oklch(45.07% 0.091 266.46);
+  --color-stone-800: oklch(36.34% 0.074 266.63);
+  --color-stone-900: oklch(28.62% 0.058 266.34);
+  --color-stone-950: oklch(25.22% 0.05 266.4);
+}

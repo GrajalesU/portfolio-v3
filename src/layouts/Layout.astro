@@ -25,24 +25,26 @@ const t = useTranslations(lang);
   </head>
   <body class="font-display antialiased">
     <header
-      class="sticky top-0 z-50 w-full border-b border-slate-300 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      class="sticky top-0 z-50 w-full border-b border-stone-300 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
     >
       <navigation class="container mx-auto max-w-6xl flex justify-between">
-        <h1 class="block px-4 py-2 md:px-8 md:py-4 text-slate-600">
-          <strong class="pr-2 font-bold text-slate-900">Portfolio</strong>
-          <span class="md:text-lg">Juan Manuel Grajales</span>
+        <h1 class="block px-4 py-2 md:px-8 md:py-4 text-stone-600">
+          <strong class="pr-2 text-stone-950">Portfolio</strong>
+          <span class="md:text-lg font-bold text-stone-600"
+            >Juan Manuel Grajales</span
+          >
         </h1>
         <LangSwitch />
         <ul
-          class="hidden md:flex items-center gap-4 px-4 py-2 md:px-8 md:py-4 md:min-w-[540px]"
+          class="hidden md:flex items-center gap-4 px-4 py-2 md:px-8 md:py-4 md:min-w-[540px] text-stone-950"
         >
           <li>
             <a
               href="#about"
-              class="group px-2 py-1 rounded-md hover:bg-slate-50 transition-colors"
+              class="group px-2 py-1 rounded-md hover:bg-stone-50 transition-colors duration-200"
             >
               <span
-                class="group-hover:text-slate-900 transition-colors md:text-lg"
+                class="group-hover:text-stone-900 transition-colors md:text-lg"
                 >{t("about.title")}</span
               >
             </a>
@@ -50,10 +52,10 @@ const t = useTranslations(lang);
           <li>
             <a
               href="#projects"
-              class="group px-2 py-1 rounded-md hover:bg-slate-50 transition-colors"
+              class="group px-2 py-1 rounded-md hover:bg-stone-50 transition-colors duration-200"
             >
               <span
-                class="group-hover:text-slate-900 transition-colors md:text-lg"
+                class="group-hover:text-stone-900 transition-colors md:text-lg"
                 >{t("projects.title")}</span
               >
             </a>
@@ -61,10 +63,10 @@ const t = useTranslations(lang);
           <li>
             <a
               href="#skills"
-              class="group px-2 py-1 rounded-md hover:bg-slate-50 transition-colors"
+              class="group px-2 py-1 rounded-md hover:bg-stone-50 transition-colors duration-200"
             >
               <span
-                class="group-hover:text-slate-900 transition-colors md:text-lg"
+                class="group-hover:text-stone-900 transition-colors md:text-lg"
                 >{t("skills.title")}</span
               >
             </a>
@@ -72,25 +74,25 @@ const t = useTranslations(lang);
           <li>
             <a
               href="#contact"
-              class="rounded-md bg-slate-900 text-white px-4 py-2 md:px-6 md:py-3 hover:bg-slate-800 transition-colors md:text-lg"
+              class="rounded-md bg-stone-900 text-white px-4 py-2 md:px-6 md:py-3 hover:bg-stone-800 transition-colors duration-200 md:text-lg"
               >{t("contact.title")}</a
             >
           </li>
         </ul>
       </navigation>
     </header>
-    <main class="pb-16 md:pb-0">
+    <main class="bg-[#f8fafc]">
       <slot />
     </main>
     <div
-      class="fixed md:right-0 md:top-1/2 md:-translate-y-1/2 md:border-l md:border-t md:border-b md:rounded-l-lg md:bg-white/95 md:backdrop-blur supports-[backdrop-filter]:md:bg-white/60 bottom-0 flex md:flex-col px-4 py-2 justify-between z-50 w-full md:w-auto border-t border-slate-300 bg-white gap-2 md:gap-4 md:justify-normal md:h-fit"
+      class="fixed md:right-0 md:top-1/2 md:-transtone-y-1/2 md:border-l md:border-t md:border-b md:rounded-l-lg md:bg-white/95 md:backdrop-blur supports-[backdrop-filter]:md:bg-white/60 bottom-0 flex md:flex-col px-4 py-2 justify-between z-50 w-full md:w-auto border-t border-stone-300 bg-white gap-2 md:gap-4 md:justify-normal md:h-fit"
       id="fixed-contact-info"
     >
       <a
         href="/Juan_Manuel_Grajales__Hoja_de_vida.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        class="group flex gap-2 text-xs items-center font-bold hover:bg-slate-50 rounded-md px-2 py-1 transition-colors"
+        class="group flex gap-2 text-xs items-center font-bold hover:bg-stone-50 rounded-md px-2 py-1 transition-colors"
       >
         <span class="group-hover:scale-110 transition-transform">
           <FileDocument />
@@ -101,7 +103,7 @@ const t = useTranslations(lang);
         href="https://www.linkedin.com/in/juan-manuel-grajales-urquijo/"
         target="_blank"
         rel="noopener noreferrer"
-        class="group flex gap-2 text-xs items-center font-bold hover:bg-slate-50 rounded-md px-2 py-1 transition-colors"
+        class="group flex gap-2 text-xs items-center font-bold hover:bg-stone-50 rounded-md px-2 py-1 transition-colors"
       >
         <span class="group-hover:scale-110 transition-transform">
           <LinkedIn />
@@ -112,7 +114,7 @@ const t = useTranslations(lang);
         href="https://github.com/grajalesu"
         target="_blank"
         rel="noopener noreferrer"
-        class="group flex gap-2 text-xs items-center font-bold hover:bg-slate-50 rounded-md px-2 py-1 transition-colors"
+        class="group flex gap-2 text-xs items-center font-bold hover:bg-stone-50 rounded-md px-2 py-1 transition-colors"
       >
         <span class="group-hover:scale-110 transition-transform">
           <GitHub />

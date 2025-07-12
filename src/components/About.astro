@@ -11,14 +11,32 @@ const replaceYearsOfExperience = (str: string) =>
   str.replace("{{yearsOfExperience}}", yearsOfExperience.toString());
 ---
 
-<section class="p-4  md:py-8 md:pb-16 min-h-svh content-center" id="about">
-  <div class="container mx-auto max-w-[800px]">
+<section
+  class="p-4 md:py-8 md:pb-16 min-h-svh content-center w-full relative"
+  id="about"
+>
+  <div
+    class="absolute inset-0 z-0"
+    style={{
+      backgroundImage: `
+        linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+        linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)
+      `,
+      backgroundSize: "60px 60px",
+      WebkitMaskImage:
+        "radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)",
+      maskImage:
+        "radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)",
+    }}
+  >
+  </div>
+  <div class="container mx-auto max-w-[800px] z-20 relative">
     <h2
       class="text-3xl font-bold mb-4 md:mb-8 tracking-tighter sm:text-5xl xl:text-6xl/none md:text-center"
     >
       {t("about.title")}
     </h2>
-    <div class="text-pretty text-slate-600 px-2 flex flex-col gap-4 md:text-xl">
+    <div class="text-pretty text-stone-600 px-2 flex flex-col gap-4 md:text-xl">
       <p>
         {t("about.description.0")}
 
