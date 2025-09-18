@@ -5,20 +5,20 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
 <script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const script = document.createElement('script');
-    script.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
+  document.addEventListener("DOMContentLoaded", () => {
+    const script = document.createElement("script");
+    script.src = "https://unpkg.com/aos@2.3.1/dist/aos.js";
     script.onload = () => {
       window.AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
+        duration: 500,
+        easing: "ease-in-out",
         once: true,
         mirror: false,
         offset: 100,
-        delay: 100
+        delay: 50,
       });
-      
-      window.addEventListener('load', () => {
+
+      window.addEventListener("load", () => {
         window.AOS.refresh();
       });
     };
