@@ -4,6 +4,7 @@ import GitHub from "../components/icons/GitHub.astro";
 import LinkedIn from "../components/icons/LinkedIn.astro";
 import LangSwitch from "../components/LangSwitch.astro";
 import AOS from "../components/AOS.astro";
+import Analytics from "@vercel/analytics/astro";
 
 import { useTranslations, getLangFromUrl } from "../i18n/utils";
 const lang = getLangFromUrl(new URL(Astro.url));
@@ -128,6 +129,7 @@ const cvUrl =
         GitHub
       </a>
     </div>
+    <Analytics />
   </body>
 </html>
 
