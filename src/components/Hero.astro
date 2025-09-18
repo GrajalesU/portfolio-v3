@@ -37,12 +37,12 @@ const t = useTranslations(lang);
           </a>
         </div>
       </div>
-      <div class="mt-8 md:mt-0 shrink-0">
+      <div class="mt-8 md:mt-0 shrink-0 relative">
         <div
-          class="w-[280px] h-[280px] md:w-[420px] md:h-[420px] mx-auto overflow-hidden rounded-2xl"
+          class="w-[280px] h-[280px] md:w-[420px] md:h-[420px] mx-auto overflow-hidden rounded-2xl my-outline"
         >
           <img
-            src="https://avatars.githubusercontent.com/u/97746279?v=4"
+            src="/profile-image.webp"
             alt={t("hero.img-alt")}
             width="420"
             height="420"
@@ -68,3 +68,27 @@ const t = useTranslations(lang);
   >
   </div>
 </section>
+
+<style>
+  .my-outline {
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% + 12px);
+      left: calc(50% + 12px);
+      transform: translate(-50%, -50%);
+      width: 280px;
+      height: 280px;
+      border-radius: 16px;
+      border: 2px solid var(--color-stone-600);
+      z-index: -1;
+
+      @media (min-width: 48rem) {
+        width: 420px;
+        height: 420px;
+        top: calc(50% + 24px);
+        left: calc(50% + 24px);
+      }
+    }
+  }
+</style>

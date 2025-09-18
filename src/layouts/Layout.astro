@@ -7,6 +7,10 @@ import LangSwitch from "../components/LangSwitch.astro";
 import { useTranslations, getLangFromUrl } from "../i18n/utils";
 const lang = getLangFromUrl(new URL(Astro.url));
 const t = useTranslations(lang);
+const cvUrl =
+  lang === "es"
+    ? "/Juan Manuel Grajales - Frontend Engineer - CV - ES.pdf"
+    : "/Juan Manuel Grajales - Frontend Engineer - CV - EN.pdf";
 ---
 
 <!doctype html>
@@ -89,7 +93,7 @@ const t = useTranslations(lang);
       id="fixed-contact-info"
     >
       <a
-        href="/Juan_Manuel_Grajales__Hoja_de_vida.pdf"
+        href={cvUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="group flex gap-2 text-xs items-center font-bold hover:bg-stone-50 rounded-md px-2 py-1 transition-colors"
