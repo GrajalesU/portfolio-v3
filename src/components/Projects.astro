@@ -12,17 +12,19 @@ const t = useTranslations(lang);
   class="p-4 md:py-8 md:pb-16 min-h-svh content-center w-full relative"
   id="projects"
 >
-  <div class="container mx-auto max-w-6xl p-4 z-20 relative">
+  <div class="container mx-auto max-w-6xl p-4 z-20 relative" data-aos="fade-up">
     <h2
       class="text-3xl font-bold mb-4 md:mb-8 tracking-tighter sm:text-5xl xl:text-6xl"
+      data-aos="fade-up"
+      data-aos-delay="100"
     >
       {t("projects.title")}
     </h2>
-    <p class="text-stone-600 max-w-2xl mb-8 md:text-xl">
+    <p class="text-stone-600 max-w-2xl mb-8 md:text-xl" data-aos="fade-up" data-aos-delay="200">
       {t("projects.description")}
     </p>
   </div>
-  <div class="swiper">
+  <div class="swiper" data-aos="fade-up" data-aos-delay="300">
     <div class="swiper-wrapper pb-8">
       <div class="swiper-slide">
         <Project

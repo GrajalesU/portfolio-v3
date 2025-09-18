@@ -3,6 +3,7 @@ import FileDocument from "../components/icons/FileDocument.astro";
 import GitHub from "../components/icons/GitHub.astro";
 import LinkedIn from "../components/icons/LinkedIn.astro";
 import LangSwitch from "../components/LangSwitch.astro";
+import AOS from "../components/AOS.astro";
 
 import { useTranslations, getLangFromUrl } from "../i18n/utils";
 const lang = getLangFromUrl(new URL(Astro.url));
@@ -26,6 +27,7 @@ const cvUrl =
     <meta name="generator" content={Astro.generator} />
     <title>Portfolio | Juan Manuel Grajales</title>
     <meta name="description" content={t("seo.description")} />
+    <AOS />
   </head>
   <body class="font-display antialiased">
     <header
